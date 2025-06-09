@@ -1,3 +1,4 @@
+import { default as React } from '../../../../node_modules/.pnpm/react@18.2.0/node_modules/react';
 import { CustomButtonProps } from '../../../types/buttonExtends';
 import { palette as defaultPalette } from '../../../themes/defaultPalette';
 import { Theme } from '@mui/material/styles';
@@ -44,4 +45,4 @@ export declare const getButtonStyles: (theme: Theme, color?: keyof typeof defaul
         shadowColor: any;
     };
 };
-export declare const Button: ({ variant, color, ...rest }: CustomButtonProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Button: React.ForwardRefExoticComponent<Omit<CustomButtonProps, "ref"> & React.RefAttributes<HTMLButtonElement>>;

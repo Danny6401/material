@@ -1,3 +1,4 @@
+import { default as React } from '../../../../node_modules/.pnpm/react@18.2.0/node_modules/react';
 import { CustomIconButtonProps } from '../../../types/buttonExtends';
 import { palette as defaultPalette } from '../../../themes/defaultPalette';
 import { Theme } from '@mui/material/styles';
@@ -67,4 +68,4 @@ export declare const getToggleIconButtonStyles: (theme: Theme, color?: keyof typ
         borderColor: any;
     };
 };
-export declare const IconButton: ({ variant, toggleIcon, children, color, ...rest }: CustomIconButtonProps) => import("react/jsx-runtime").JSX.Element;
+export declare const IconButton: React.ForwardRefExoticComponent<Omit<CustomIconButtonProps, "ref"> & React.RefAttributes<HTMLButtonElement>>;

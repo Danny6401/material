@@ -61,6 +61,22 @@ export declare const palette: {
         fabBg: string;
         fabFont: string;
     };
+    error: {
+        main: string;
+        custMain: string;
+        onMain: string;
+        shadow: string;
+        outline: string;
+        elevated: string;
+        tonal: string;
+        onTonal: string;
+        iconFont: string;
+        iconOverlay: string;
+        surface: string;
+        neutral: string;
+        fabBg: string;
+        fabFont: string;
+    };
 };
 export declare const dark: {
     primary: {
