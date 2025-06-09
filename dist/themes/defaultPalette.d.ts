@@ -1,0 +1,65 @@
+export declare const palette: {
+    primary: {
+        main: string;
+        costMain: string;
+        onMain: string;
+        shadow: string;
+        outline: string;
+        elevated: string;
+        tonal: string;
+        onTonal: string;
+        iconFont: string;
+        iconOverlay: string;
+        surface: string;
+        neutral: string;
+        fabBg: string;
+        fabFont: string;
+    };
+    surface: {
+        costMain: string;
+        onMain: string;
+        shadow: string;
+        outline: string;
+        elevated: string;
+        tonal: string;
+        onTonal: string;
+        iconFont: string;
+        iconOverlay: string;
+        surface: string;
+        neutral: string;
+        fabBg: string;
+        fabFont: string;
+    };
+    secondary: {
+        main: string;
+        costMain: string;
+        onMain: string;
+        shadow: string;
+        outline: string;
+        elevated: string;
+        tonal: string;
+        onTonal: string;
+        iconFont: string;
+        iconOverlay: string;
+        surface: string;
+        neutral: string;
+        fabBg: string;
+        fabFont: string;
+    };
+    tertiary: {
+        costMain: string;
+        onMain: string;
+        shadow: string;
+        outline: string;
+        elevated: string;
+        tonal: string;
+        onTonal: string;
+        iconFont: string;
+        iconOverlay: string;
+        surface: string;
+        neutral: string;
+        fabBg: string;
+        fabFont: string;
+    };
+};
+export declare const disableColor: string[];
