@@ -25,29 +25,15 @@ type CustomPaletteColor = PaletteColor & {
     onTonal?: string;
 };
 
-function getDefaultColor(theme: string) {
-    switch (theme) {
-        case "primary":
-            return "#7a7d80";
-        case "error":
-            return "#FF4D4F";
-        default:
-            return "#7a7d80";
-    }
-}
-
 // 依 color 取得 palette
 const getCheckboxStyles = (theme: Theme, color: CustomColor = "primary") => {
     const fallback = defaultPalette[color];
     const colorSet = (theme?.palette?.[color] as CustomPaletteColor) ?? fallback;
-    const defaultColor = getDefaultColor(color);
 
     return {
         // 初始狀態（未勾選、未 hover、未 disabled）
         "&": {
-            color: defaultColor, // 這裡設定初始顏色
-            backgroundColor: "transparent",
-            // border: `1.5px solid ${colorSet.custMain ?? colorSet.main}`,
+            color: colorSet?.default ?? fallback.default, // 這裡設定初始顏色
         },
         // 勾選與 indeterminate 狀態
         "&.Mui-checked, &.MuiCheckbox-indeterminate": {
