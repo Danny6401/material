@@ -33,7 +33,7 @@ const getCheckboxStyles = (theme: Theme, color: CustomColor = "primary") => {
     return {
         // 初始狀態（未勾選、未 hover、未 disabled）
         "&": {
-            color: colorSet?.default ?? fallback.default, // 這裡設定初始顏色
+            color: colorSet?.default ?? fallback.myDefault, // 這裡設定初始顏色
         },
         // 勾選與 indeterminate 狀態
         "&.Mui-checked, &.MuiCheckbox-indeterminate": {
