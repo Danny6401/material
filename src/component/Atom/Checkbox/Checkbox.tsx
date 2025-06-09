@@ -4,20 +4,14 @@ import type { Theme } from "@mui/material/styles";
 import type { CustomColor } from "../../../types/checkboxExtends";
 import type { PaletteColor } from "@mui/material/styles";
 
-import MuiCheckbox, { CheckboxProps as MuiCheckboxProps } from "@mui/material/Checkbox";
+import MuiCheckbox from "@mui/material/Checkbox";
 import { FormControlLabel } from "@mui/material";
 import { styled, alpha } from "@mui/material/styles";
 import {
     disableColor,
     palette as defaultPalette,
 } from "../../../themes/defaultPalette";
-
-export interface CustomCheckboxProps
-    extends Omit<MuiCheckboxProps, "color"> {
-    color?: CustomColor; // e.g. "primary" | "error"
-    label?: React.ReactNode;
-    defaultChecked?: boolean;
-}
+import { CustomCheckboxProps } from "../../../types/checkboxExtends";
 
 type CustomPaletteColor = PaletteColor & {
     custMain?: string;

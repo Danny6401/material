@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Checkbox, CustomCheckboxProps } from "../../component/Atom/Checkbox/Checkbox";
+import { Checkbox } from "../../component/Atom/Checkbox/Checkbox";
+import { CustomCheckboxProps } from "../../types/checkboxExtends";
 // import { useArgs } from "@storybook/preview-api";
 
 const meta: Meta<typeof Checkbox> = {
