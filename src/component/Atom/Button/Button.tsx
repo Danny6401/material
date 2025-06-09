@@ -1,3 +1,4 @@
+import React from "react";
 import { alpha, styled } from "@mui/material/styles";
 import MuiButton from "@mui/material/Button";
 import type {
@@ -206,18 +207,19 @@ const StyledButton = styled(MuiButton)<{
   }
 });
 
-export const Button = ({
-  variant = "filled",
-  color = "primary",
-  ...rest
-}: CustomButtonProps) => {
-  return (
-    <StyledButton
-      disableElevation
-      disableRipple
-      {...rest}
-      data-color={color} // ✅ 你自定義的，用來控制樣式
-      data-variant={variant} // ✅ 你自定義的，用來控制樣式
-    />
-  );
-};
+export const Button = React.forwardRef<HTMLButtonElement, CustomButtonProps>(
+  ({ variant = "filled", color = "primary", ...rest }, ref) => {
+    return (
+      <StyledButton
+        ref={ref} // ✅ 把 ref 傳到底層 DOM 元素
+        disableElevation
+        disableRipple
+        {...rest}
+        data-color={color}
+        data-variant={variant}
+      />
+    );
+  }
+);
+
+Button.displayName = "Button"; // ✅ 建議加上，避免 DevTools 顯示為 "Anonymous"

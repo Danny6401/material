@@ -1,8 +1,9 @@
+import React from "react";
 import { styled } from "@mui/material/styles";
 import MuiFab from "@mui/material/Fab";
-import type { CustomFabProps } from "../../../types/buttonExtends";
 import type { Theme } from "@mui/material/styles";
 import { palette as defaultPalette } from "../../../themes/defaultPalette";
+import type { CustomFabProps } from "../../../types/buttonExtends";
 
 export const getFabStyles = (
   theme: Theme,
@@ -84,8 +85,16 @@ const StyleFab = styled(MuiFab)<{
   };
 });
 
-export const Fab = ({ color = "surface", ...props }: CustomFabProps) => {
-  return (
-    <StyleFab data-color={color} size="medium" disableFocusRipple {...props} />
-  );
-};
+export const Fab = React.forwardRef<HTMLButtonElement, CustomFabProps>(
+  ({ color = "surface", ...props }, ref) => {
+    return (
+      <StyleFab
+        ref={ref}
+        data-color={color}
+        size="medium"
+        disableFocusRipple
+        {...props}
+      />
+    );
+  }
+);

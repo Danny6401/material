@@ -1,3 +1,4 @@
+import React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import MuiIconButton from "@mui/material/IconButton";
 import type {
@@ -324,13 +325,10 @@ const StyleToggleIconButton = styled(MuiIconButton)<{
   }
 });
 
-export const IconButton = ({
-  variant,
-  toggleIcon,
-  children,
-  color = "primary",
-  ...rest
-}: CustomIconButtonProps) => {
+export const IconButton = React.forwardRef<
+  HTMLButtonElement,
+  CustomIconButtonProps
+>(({ variant, toggleIcon, children, color = "primary", ...rest }, ref) => {
   const [isSelected, setIsSelected] = useState(false);
   const toggleSelect = () => {
     console.log("toggleClick");
@@ -339,6 +337,7 @@ export const IconButton = ({
   if (toggleIcon) {
     return (
       <StyleToggleIconButton
+        ref={ref}
         disableRipple
         data-color={color}
         data-variant={variant}
@@ -352,6 +351,7 @@ export const IconButton = ({
   } else {
     return (
       <StyleIconButton
+        ref={ref}
         disableRipple
         data-color={color}
         data-variant={variant}
@@ -361,4 +361,4 @@ export const IconButton = ({
       </StyleIconButton>
     );
   }
-};
+});
