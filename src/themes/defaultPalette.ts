@@ -71,6 +71,25 @@ export const palette = {
     fabBg: "#BDDEDF",
     fabFont: "#0E3A3B",
   },
+  // 
+  error: {
+    main: "#FF4D4F",
+    custMain: "#FF4D4F",
+    onMain: "#FFFFFF",
+    shadow: "#000000",
+    outline: "#CECECE",
+    elevated: "#FAFAFA",
+    tonal: "#DBE9FF",
+    onTonal: "#2D66BF",
+
+    iconFont: "#7A7D80",
+    iconOverlay: "#505050",
+    surface: "#F5F5F6",
+    neutral: "#34393D",
+
+    fabBg: "#F5F5F6",
+    fabFont: "#FF4D4F",
+  }
 };
 export const dark = {
   primary: {

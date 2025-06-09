@@ -1,13 +1,11 @@
 import { CheckboxProps as MuiCheckboxProps } from "@mui/material/Checkbox";
 
-export type CustomCheckboxVariant = "filled" | "outlined" | "standard";
-export type CustomColor = "surface" | "primary" | "secondary" | "tertiary";
+// 自訂 variant 與 color 型別
+export type CustomColor = "primary" | "error";
 
+// 擴充後的 Checkbox Props
 export interface CustomCheckboxProps
     extends Omit<MuiCheckboxProps, "color"> {
-    variant?: CustomCheckboxVariant;
-    color?: CustomColor;
-    indeterminateIcon?: React.ReactElement;
-    checkedIcon?: React.ReactElement;
-    uncheckedIcon?: React.ReactElement;
+    color?: CustomColor;             // 自訂顏色
+    label?: React.ReactNode;         // label 建議加在這裡
 }
