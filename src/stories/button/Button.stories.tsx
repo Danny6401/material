@@ -44,7 +44,7 @@ export const Filled: Story = {
   args: {
     children: "Filled Button",
     variant: "filled",
-    disabled: false,
+    disableRipple: false,
   },
 };
 
