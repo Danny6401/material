@@ -46,7 +46,6 @@ const getCheckboxStyles = (theme: Theme, color: CustomColor = "primary") => {
             outlineOffset: 2,
         },
     };
-
 };
 
 // 用 styled API 包裝 MuiCheckbox
@@ -60,15 +59,18 @@ export const Checkbox: React.FC<CustomCheckboxProps> = ({
     color = "primary",
     label,
     checked,
-    defaultChecked,
+    defaultChecked, // 官方建議同時支援受控與非受控模式
     disabled,
     indeterminate,
     onChange,
     ...rest
 }) => {
+    // 受控模式
     const isControlled = checked !== undefined;
+    // 非受控模式
     const [internalChecked, setInternalChecked] = React.useState(defaultChecked ?? false);
 
+    // 如果是「非受控模式」（沒有傳 checked），就用 setInternalChecked 更新內部狀態，讓元件自己管理勾選狀態
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>, value: boolean) => {
         if (!isControlled) {
             setInternalChecked(value);

@@ -1,8 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Checkbox } from "../../component/Atom/Checkbox/Checkbox";
-import { CustomCheckboxProps } from "../../types/checkboxExtends";
-// import { useArgs } from "@storybook/preview-api";
+import { CustomCheckboxProps } from "../../types/checkboxExtends"
 
 const meta: Meta<typeof Checkbox> = {
     title: "Atoms/Checkbox/Checkbox",
@@ -57,6 +56,7 @@ const InteractiveTemplate = (args: CustomCheckboxProps) => {
     );
 };
 
+// 受控元件 Story
 export const Primary: Story = {
     render: (args) => <InteractiveTemplate {...args} />,
 };
@@ -72,19 +72,27 @@ export const ErrorWithLabel: Story = {
     render: (args) => <InteractiveTemplate {...args} color="error" label="Error 樣式" />,
 };
 
+// 非受控元件 Story Template
+const UncontrolledTemplate = (args: CustomCheckboxProps) => (
+    <Checkbox
+        {...args}
+        defaultChecked={args.defaultChecked}
+    // 不傳 checked，不傳 onChange
+    />
+);
 
+// 非受控元件 Story
+export const UncontrolledPrimary: Story = {
+    render: (args) => <UncontrolledTemplate {...args} defaultChecked={true} />,
+};
 
-// export const Controlled: Story = {
-//     render: (args) => {
-//         const [, updateArgs] = useArgs();
-//         const handleChange = (event, checked) => {
-//             updateArgs({ checked });
-//         };
-//         return (
-//             <Checkbox
-//                 {...args}
-//                 onChange={handleChange}
-//             />
-//         );
-//     },
-// };
+export const UncontrolledError: Story = {
+    render: (args) => <UncontrolledTemplate {...args} color="error" defaultChecked={false} />,
+};
+export const UncontrolledPrimaryWithLabel: Story = {
+    render: (args) => <UncontrolledTemplate {...args} defaultChecked={true} label="非受控模式 - Standard 樣式" />,
+};
+
+export const UncontrolledErrorWithLabel: Story = {
+    render: (args) => <UncontrolledTemplate {...args} color="error" defaultChecked={false} label="非受控模式 - Error 樣式" />,
+};
