@@ -15,6 +15,8 @@ declare module "@mui/material/styles" {
     neutral?: string;
     fabBg?: string;
     fabFont?: string;
+    // 新增預設色彩(避免部分主題顏色與預設色彩不同)
+    default?: string;
   }
 
   interface Palette {
