@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 // import { fn } from "@storybook/test";
 
-import { IconButton } from "../../component/Atom/Button/IconButton";
+import { IconButton } from "../../components/Atom/Button/IconButton";
 // import { ToggleIconButton } from "../../component/Atom/Button/IconButton";
 import SettingsIcon from "@mui/icons-material/Settings";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";

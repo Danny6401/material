@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 // import { fn } from "@storybook/test";
 
-import { Fab } from "../../component/Atom/Button/FAB";
+import { Fab } from "../../components/Atom/Button/FAB";
 import EditIcon from "@mui/icons-material/Edit";
 
 const meta: Meta<typeof Fab> = {

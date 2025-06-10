@@ -12,7 +12,7 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/component/*"]
+      "@components/*": ["src/components/*"]
     }
   },
   "include": ["src"]
