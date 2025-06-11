@@ -15,6 +15,9 @@ const meta: Meta<typeof Checkbox> = {
             control: { type: "select" },
             options: ["primary", "error"],
         },
+        label: { control: "text" },
+        disabled: { control: "boolean" },
+        indeterminate: { control: "boolean" },
     },
     args: {
         color: "primary",
@@ -148,26 +151,28 @@ const IndeterminateGroupTemplate = () => {
     const indeterminate = someChecked && !allChecked;
 
     return (
-        <div>
+        <ul>
             <Checkbox
                 checked={allChecked}
                 indeterminate={indeterminate}
                 onChange={e => setChecked([e.target.checked, e.target.checked])}
                 label="父層"
             />
-            <div style={{ marginLeft: "48px" }}>
+            <li style={{ marginLeft: "48px" }}>
                 <Checkbox
                     checked={checked[0]}
                     onChange={e => setChecked([e.target.checked, checked[1]])}
                     label="子項目1"
                 />
+            </li>
+            <li style={{ marginLeft: "48px" }}>
                 <Checkbox
                     checked={checked[1]}
                     onChange={e => setChecked([checked[0], e.target.checked])}
                     label="子項目2"
                 />
-            </div>
-        </div>
+            </li>
+        </ul>
     );
 };
 
